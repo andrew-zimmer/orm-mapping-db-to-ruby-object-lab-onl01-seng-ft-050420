@@ -53,8 +53,14 @@ class Student
       LIMIT 1; 
     SQL
     DB[:conn].execute(sql).collect {|row| self.new_from_db(row)}[0]
-    
   end 
+  
+  def self.all_students_in_grade_X(x)
+    sql = <<-SQL 
+      "SELECT * FROM students 
+      WHERE grade = ? 
+    SQL
+    DB[:conn].execute(sql)
 
   def self.find_by_name(name)
     sql = "SELECT * FROM students WHERE name = ? LIMIT 1;"
