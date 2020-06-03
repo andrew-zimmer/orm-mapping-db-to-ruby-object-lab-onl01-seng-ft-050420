@@ -18,6 +18,7 @@ class Student
     sql = <<-SQL 
       SELECT * FROM students 
       WHERE grade = 9
+      GROUP BY grade
     SQL
   end 
 
