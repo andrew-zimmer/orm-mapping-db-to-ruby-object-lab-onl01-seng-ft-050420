@@ -36,6 +36,11 @@ class Student
       self.new_from_db(row)
     end 
   end 
+  
+  def self.first_X_students_in_grade_10(x)
+    sql = <<-SQL 
+      SELECT 
+  end 
 
   def self.find_by_name(name)
     sql = "SELECT * FROM students WHERE name = ? LIMIT 1;"
