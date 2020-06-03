@@ -53,7 +53,7 @@ class Student
       LIMIT 1; 
     SQL
     DB[:conn].execute(sql).collect {|row| self.new_from_db(row)}
-    @id = DB[:conn].execute("SELECT * FROM students WHERE grade = 10 LIMIT 1;")[0][0]
+    
   end 
 
   def self.find_by_name(name)
