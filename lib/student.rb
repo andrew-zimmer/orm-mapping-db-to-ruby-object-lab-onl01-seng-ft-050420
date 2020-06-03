@@ -18,7 +18,7 @@ class Student
     sql = <<-SQL 
       SELECT * FROM students 
       WHERE name = ? 
-      LIMIT 1
+      LIMIT 1;
     SQL 
     
   end
