@@ -61,6 +61,7 @@ class Student
       WHERE grade = ? 
     SQL
     DB[:conn].execute(sql)
+  end 
 
   def self.find_by_name(name)
     sql = "SELECT * FROM students WHERE name = ? LIMIT 1;"
