@@ -60,7 +60,7 @@ class Student
       "SELECT * FROM students 
       WHERE grade = ? 
     SQL
-    DB[:conn].execute(sql)
+    DB[:conn].execute(sql, x)
   end 
 
   def self.find_by_name(name)
