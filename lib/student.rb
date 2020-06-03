@@ -24,11 +24,12 @@ class Student
   
   def self.students_below_12th_grade
     sql = <<-SQL
-      SELECT name FROM students 
+      SELECT * FROM students 
       WHERE grade < 12
       GROUP BY grade;
     SQL
-    DB[:conn].execute(sql,name)
+    DB[:conn].execute(sql).collect do |name|
+      self.
   end 
 
   def self.find_by_name(name)
