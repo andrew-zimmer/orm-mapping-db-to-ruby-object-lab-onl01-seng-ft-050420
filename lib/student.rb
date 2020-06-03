@@ -26,7 +26,7 @@ class Student
     sql = <<-SQL
       SELECT name FROM students 
       WHERE grade < 12
-      GROUP BY grade;
+      GROUP BY name;
     SQL
     DB[:conn].execute(sql)
   end 
