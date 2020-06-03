@@ -21,6 +21,15 @@ class Student
     SQL
     DB[:conn].execute(sql)
   end 
+  
+  def self.students_below_12th_grade
+    sql = <<-SQL
+      SELECT * FROM students 
+      WHERE grade < 12 
+      GROUP BY grade;
+    SQL
+    DB[:conn].execute(sql)
+  end 
 
   def self.find_by_name(name)
     sql = "SELECT * FROM students WHERE name = ? LIMIT 1;"
