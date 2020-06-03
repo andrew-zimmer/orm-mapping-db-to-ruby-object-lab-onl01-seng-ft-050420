@@ -28,7 +28,7 @@ class Student
       WHERE grade < 12
       GROUP BY grade;
     SQL
-    DB[:conn].execute(sql)
+    DB[:conn].execute(sql,name)
   end 
 
   def self.find_by_name(name)
