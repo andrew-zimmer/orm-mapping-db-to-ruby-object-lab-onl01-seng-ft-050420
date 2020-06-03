@@ -25,7 +25,8 @@ class Student
   def self.students_below_12th_grade
     sql = <<-SQL
       SELECT name FROM students 
-      WHERE grade < 12;
+      WHERE grade < 12
+      GROUP BY grade;
     SQL
     DB[:conn].execute(sql)
   end 
